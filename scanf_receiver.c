@@ -58,7 +58,7 @@ int main()
 		printf("listen() failed with error code : %d\n", errno);
 		return -1;
 	}
-	printf("The receiver is listening...\n");
+	printf("The receiver is listening...\n\n");
 
 	// infinity loop for the incoming requests
 	while (1)
@@ -76,7 +76,7 @@ int main()
 			perror("accept() failed");
 			return -1;
 		}
-		printf("The server is conected\n\n");
+		printf("The server is conected\n");
 
 		// accept the file
 		char buffer[BUFFER_SIZE];
@@ -95,7 +95,7 @@ int main()
 		}
 		buffer[bytesReceived] = '\0';
 
-		printf("The password we have got is: %s \n", buffer);
+		printf("The password we have got is: %s \n\n", buffer);
 
 		// close the connection:
 		close(clientSocket);

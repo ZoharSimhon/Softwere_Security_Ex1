@@ -156,9 +156,3 @@ int send_file()
 	close(sock);
 	return 0;
 }
-
-int main()
-{
-	char password[1000];
-	scanf("%s ", password);
-}
